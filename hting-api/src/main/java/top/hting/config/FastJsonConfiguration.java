@@ -25,15 +25,15 @@ public class FastJsonConfiguration extends WebMvcConfigurerAdapter{
 	public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
 		super.configureMessageConverters(converters);
 		
-		FastJsonHttpMessageConverter fastJsonHttpMessageConverter = new FastJsonHttpMessageConverter();
-		FastJsonConfig config = new FastJsonConfig();
-		config.setSerializerFeatures(
-				SerializerFeature.DisableCircularReferenceDetect,
-				SerializerFeature.WriteMapNullValue,
-				SerializerFeature.WriteNullListAsEmpty,
-				SerializerFeature.WriteNullStringAsEmpty);
-		fastJsonHttpMessageConverter.setFastJsonConfig(config);
-		converters.add(fastJsonHttpMessageConverter);
+//		FastJsonHttpMessageConverter fastJsonHttpMessageConverter = new FastJsonHttpMessageConverter();
+//		FastJsonConfig config = new FastJsonConfig();
+//		config.setSerializerFeatures(
+//				SerializerFeature.DisableCircularReferenceDetect,
+//				SerializerFeature.WriteMapNullValue,
+//				SerializerFeature.WriteNullListAsEmpty,
+//				SerializerFeature.WriteNullStringAsEmpty);
+//		fastJsonHttpMessageConverter.setFastJsonConfig(config);
+		converters.add(converter());
 	}
 	@Bean
 	public FastJsonHttpMessageConverter converter() {

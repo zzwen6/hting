@@ -1,12 +1,16 @@
 package top.hting.entity;
 
 import java.io.Serializable;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -38,8 +42,10 @@ public class UserEntity implements Serializable {
 	private Integer age;
 	
 	@Column(name = "t_address")
-//	@ApiModelProperty(value = "地址", name = "address")
 	@ApiModelProperty(value = "地址")
 	private String address;
 
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
+	private List<RoleEntity> roles;
+	
 }

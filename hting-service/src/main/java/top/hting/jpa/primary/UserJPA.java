@@ -1,4 +1,4 @@
-package top.hting.jpa;
+package top.hting.jpa.primary;
 
 import java.io.Serializable;
 

@@ -5,7 +5,7 @@ import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
-import top.hting.entity.UserEntity;
+import top.hting.entity.primary.UserEntity;
 import top.hting.jpa.primary.UserJPA;
 
 @Service

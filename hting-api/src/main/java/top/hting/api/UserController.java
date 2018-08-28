@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
-import top.hting.entity.UserEntity;
+import top.hting.entity.primary.UserEntity;
 import top.hting.service.UserService;
 
 @Api(value = "用户管理", description = "用户管理")
@@ -34,6 +34,7 @@ public class UserController {
 	@ApiOperation(nickname = "根据ID查询用户", value = "根据ID查询用户")
 	@GetMapping(value = "/get")
 	public void get(@RequestParam Long id) {
-		userService.findById(id);
+		// userService.findById(id);
+		throw new RuntimeException("哈哈");
 	}
 }

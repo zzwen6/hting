@@ -1,4 +1,4 @@
-package top.hting.entity;
+package top.hting.entity.primary;
 
 import java.io.Serializable;
 

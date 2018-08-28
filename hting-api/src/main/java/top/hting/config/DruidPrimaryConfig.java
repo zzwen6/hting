@@ -42,7 +42,7 @@ public class DruidPrimaryConfig {
 	@Primary
 	public LocalContainerEntityManagerFactoryBean entityManagerFactoryPrimary(EntityManagerFactoryBuilder builder) {
 		return builder.dataSource(dataSource)
-				.packages("")
+				.packages("top.hting.entity.primary")
 				.persistenceUnit("primary")
 				.properties(buildProperties())
 				.build();

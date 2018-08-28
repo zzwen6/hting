@@ -27,7 +27,6 @@ public class DruidDataSourceConfiguration {
 	
 	@Bean(name = "slaveDataSource")
 	@Qualifier("slaveDataSource")
-	@Primary
 	@ConfigurationProperties(prefix = "spring.datasource.slave")
 	public DataSource slaveDataSource() {
 		return new DruidDataSource();

@@ -32,17 +32,15 @@ public class DruidSlaveConfig {
 	@Qualifier("slaveDataSource")
 	private DataSource dataSource;
 
-	@Primary
 	@Bean(name = "entityManagerSlave")
 	public EntityManager entityManager(EntityManagerFactoryBuilder builder) {
 		return entityManagerFactoryPrimary(builder).getObject().createEntityManager();
 	}
 
 	@Bean(name = "entityManagerFactorySlave")
-	@Primary
 	public LocalContainerEntityManagerFactoryBean entityManagerFactoryPrimary(EntityManagerFactoryBuilder builder) {
 		return builder.dataSource(dataSource)
-				.packages("")
+				.packages("top.hting.entity.slave")
 				.persistenceUnit("primary")
 				.properties(buildProperties())
 				.build();

@@ -36,7 +36,9 @@ public class ResultAPI {
 		super();
 	}
 	
-	
+	public static ResultAPI systemError(){
+		return new ResultAPI(500, "系统错误", "", "");
+	}
 	
 	
 }
